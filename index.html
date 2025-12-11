@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Function</title>
+  </head>
+  <body>
+    <script>
+      //Q1 - Create a function delayedMessage that prints the message after the delay, then calls the callback.
+      function delayedMessage(msg, delay, callback) {
+        setTimeout(() => {
+          console.log(msg);
+          callback();
+        }, delay);
+      }
+      delayedMessage("hello", 2000, () => {
+        console.log("log printed");
+      });
+
+      //Q2 - create a fucntion downloadFile that print file downloaded after the delay , then calls callback.
+      function downloadFile(url, callback) {
+        console.log("Downloading...");
+
+        setTimeout(() => {
+          console.log("File downloaded");
+          callback(); // call when done
+        }, 2000);
+      }
+
+      downloadFile("file.com", () => {
+        console.log("Now processing file");
+      });
+      //Q3 - Write a function calculate Callback should decide what to do (add, subtract, multiply, divide).
+     function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+calculate(4, 2, (x, y) => console.log(x + y));
+calculate(4, 2, (x, y) => console.log(x - y));
+calculate(4, 2, (x, y) => console.log(x * y));
+calculate(4, 2, (x, y) => console.log(x / y));
+    </script>
+  </body>
+</html>
