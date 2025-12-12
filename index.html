@@ -32,14 +32,38 @@
         console.log("Now processing file");
       });
       //Q3 - Write a function calculate Callback should decide what to do (add, subtract, multiply, divide).
-     function calculate(a, b, operation) {
-  return operation(a, b);
-}
+      function calculate(a, b, operation) {
+        return operation(a, b);
+      }
 
-calculate(4, 2, (x, y) => console.log(x + y));
-calculate(4, 2, (x, y) => console.log(x - y));
-calculate(4, 2, (x, y) => console.log(x * y));
-calculate(4, 2, (x, y) => console.log(x / y));
+      calculate(4, 2, (x, y) => console.log(x + y));
+      calculate(4, 2, (x, y) => console.log(x - y));
+      calculate(4, 2, (x, y) => console.log(x * y));
+      calculate(4, 2, (x, y) => console.log(x / y));
+
+      //Q4 - Create a function greet Print "Hello name" Then run callback that prints "Welcome!".
+      function greet(name, callback) {
+        console.log("Hello", name);
+        callback();
+      }
+      greet("Ritik", () => {
+        console.log("welcome");
+      });
+
+      //Q5 Create asyncSum(a, b, callback)
+
+      function asyncSum(a,b,sum){
+        setTimeout(() => {
+         
+          sum(a+b);
+        }, 1000);
+        
+      }
+      asyncSum(3,4,(result=>{
+        console.log("sum is", result)
+    }  ))
+
+    //
     </script>
   </body>
 </html>
