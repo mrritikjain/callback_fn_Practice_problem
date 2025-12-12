@@ -52,18 +52,47 @@
 
       //Q5 Create asyncSum(a, b, callback)
 
-      function asyncSum(a,b,sum){
+      function asyncSum(a, b, sum) {
         setTimeout(() => {
-         
-          sum(a+b);
+          sum(a + b);
         }, 1000);
-        
       }
-      asyncSum(3,4,(result=>{
-        console.log("sum is", result)
-    }  ))
+      asyncSum(3, 4, (result) => {
+        console.log("sum is", result);
+      });
 
-    //
+      //Q6 -Write a function sequentialTasks(t1, t2, t3)
+      function task1(cb) {
+        console.log("Task1 is done");
+        cb();
+      }
+      function task2(cb) {
+        console.log("Task 2 is done");
+        cb();
+      }
+      function task3(cb) {
+        console.log("Task 3 is done");
+        cb();
+      }
+      function task4(cb) {
+        console.log("Task 4 is done");
+        cb();
+      }
+      function task5(cb) {
+        console.log("Task 5 is done");
+        cb();
+      }
+      task1(()=>{
+        task2(()=>{
+          task3(()=>{
+            task4(()=>{
+              task5(()=>{
+                console.log("all task done");
+              })
+            })
+          })
+        })
+      });
     </script>
   </body>
 </html>
