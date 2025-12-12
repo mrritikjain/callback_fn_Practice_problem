@@ -113,6 +113,28 @@
         "salary after deduction: ",
         calculatex(salary, tenPercentTex)
       );
+      //Q8 - Write a function filterArray(arr, callback), custom filter function
+      let nums = [20, 40, 43, 35, 456, 33];
+
+      function isEven(num) {
+        return num % 2 === 0; 
+      }
+
+      function Filtered(arr, cb) {
+        let res = [];
+
+        for (let i = 0; i < arr.length; i++) {
+          
+          if (cb(arr[i])) {
+           
+            res.push(arr[i]); 
+          }
+        }
+
+        return res;
+      }
+
+      console.log("Filtered array:", Filtered(nums, isEven));
     </script>
   </body>
 </html>
